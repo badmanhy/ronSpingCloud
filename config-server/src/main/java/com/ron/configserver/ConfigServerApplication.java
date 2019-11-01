@@ -1,17 +1,17 @@
-package com.ron.eurekaclient;
+package com.ron.configserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.config.server.EnableConfigServer;
 
-@EnableEurekaClient
+@EnableConfigServer
 @SpringBootApplication
 @EnableDiscoveryClient
-public class EurekaClientApplication {
+public class ConfigServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EurekaClientApplication.class, args);
-        System.out.println("zuul 第二个服务启动...");
+        SpringApplication.run(ConfigServerApplication.class, args);
     }
+
 }

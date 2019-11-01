@@ -6,18 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eureka-client" />
+        <module name="sso-sever" />
         <module name="eureka-server" />
-        <module name="ronSpingCloud" />
+        <module name="eureka-client" />
         <module name="zuul-server" />
-        <module name="sso_sever" />
+        <module name="ronSpingCloud" />
+        <module name="config-server" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="sso_sever" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="config-server" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="sso-sever" options="-parameters" />
       <module name="sso_sever" options="-parameters" />
       <module name="zuul-server" options="-parameters" />
     </option>

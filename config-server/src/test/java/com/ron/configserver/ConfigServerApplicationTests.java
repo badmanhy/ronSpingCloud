@@ -1,10 +1,10 @@
-package com.sso.sso_sever;
+package com.ron.configserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SsoSeverApplicationTests {
+class ConfigServerApplicationTests {
 
     @Test
     void contextLoads() {
