@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    config:
+      name: config-client
+      profile: default
+      label: master
+      uri: http://localhost:8778/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8770/eureka/

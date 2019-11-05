@@ -6,15 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="sso-sever" />
         <module name="eureka-server" />
+        <module name="feign-client" />
         <module name="eureka-client" />
         <module name="zuul-server" />
         <module name="ronSpingCloud" />
+        <module name="sso-server" />
         <module name="config-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="sso-sever" target="1.8" />
       <module name="sso_sever" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -23,6 +25,8 @@
       <module name="config-server" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="feign-client" options="-parameters" />
+      <module name="sso-server" options="-parameters" />
       <module name="sso-sever" options="-parameters" />
       <module name="sso_sever" options="-parameters" />
       <module name="zuul-server" options="-parameters" />
