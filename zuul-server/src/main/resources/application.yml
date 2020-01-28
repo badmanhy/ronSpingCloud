@@ -1,0 +1,64 @@
+spring:
+  application:
+    name: zuul-server
+  security:
+    user:
+     name: user
+     password: 111111
+server:
+  port: 8777
+eureka:
+  #服务注册
+  instance:
+    hostname: localhost
+    #prefer-ip-address: true
+
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+
+#demo 8771
+zuul:
+  routes:
+    eureka-client:
+      path: /eureka-client/**
+      #zuul.routes.eurekaclient.url = http://localhost:8771/hello
+      serviceId: eureka-client
+
+    #单点登录 8772
+    sso-server:
+      path: /sso-server/**
+      service-id: sso-server
+    #配置中心 8778
+    config-server:
+      path: config-server/**
+      service-id: config-server
+    #zuul.routes.hell.url = http://localhost:8779/hell
+    hell:
+      path: /hell/**
+    a:
+      path: /api/a/**
+      serviceId: feign-client
+  host:
+    socket-timeout-millis: 60000
+    connect-timeout-millis: 10000
+    #Zuul丢失Cookie的解决方案：https://blog.csdn.net/lindan1984/article/details/79308396
+  sensitive-headers:
+
+
+  # 路由配置方式一
+  #zuul:
+  #  routes:
+  #所有请求management-equip的请求，都会被拦截，并且转发到equip上
+  #    management-equip: /equip/**
+
+  # 路由配置方式二
+  #zuul:
+  #  routes:
+  #    # 其中equip是路由名称，可以随便定义，但是path和service-id需要一一对应
+  #    equip:
+  #      path: /equip/**
+  #      # management-equip为注册到Eureka上的服务名
+  #      service-id: management-equip
+swagger2:
+  enable: true

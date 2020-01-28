@@ -1,26 +1,38 @@
 package com.ron.ssoserver.controller;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@RequestMapping("test")
 @RestController
+@Api(tags="ron-api",description = "测试源服务API接口")
 public class ConsumerController {
-    @RequestMapping("/hi/{name}")
-    public String index(@PathVariable String name) {
-        return name+",hi!";
-    }
 
+    @ApiOperation(value = "乘法", notes = "乘法")
+    @GetMapping("/mul")
+    public Integer mul(Integer a, Integer b){
+        return a * b;
+    }
+    @ApiOperation(value = "除法", notes = "除法")
+    @GetMapping("/div")
+    public Integer div(Integer a, Integer b){
+        return a / b;
+    }
     /**
      * 登录业务
-     *
      * @param loginCode
      * @param password
      * @return
      */
-    @PostMapping("logins")
+    @ApiOperation(value="demo示例",notes="demo示例")
+    @ApiImplicitParam(name="name",value="名称",example="ron")
+    @PostMapping("/login")
     public String login(String loginCode,
                         String password,
                         @RequestParam(required = false) String url,

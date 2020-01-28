@@ -14,6 +14,6 @@ public class EurekaClientApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(EurekaClientApplication.class, args);
-        System.out.println("zuul 第二个服务启动...");
+        System.out.println("eurekaClient 服务启动...");
     }
 }
