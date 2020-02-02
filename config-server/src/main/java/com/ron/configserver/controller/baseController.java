@@ -14,6 +14,7 @@ public class baseController {
     public String gitConfig(@PathVariable String userName,String pwd) {
         return userName;
     }
+    @RequestMapping("/tfsConfig/{url}")
     public String tfsConfig(@PathVariable String url){
         return url;
     }
