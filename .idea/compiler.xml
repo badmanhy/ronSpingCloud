@@ -12,13 +12,12 @@
         <module name="eureka-client" />
         <module name="config-server" />
         <module name="zuul-server" />
-        <module name="ronSpringCloud" />
         <module name="sso-server" />
-        <module name="gateway-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="gateway" target="1.8" />
+      <module name="gateway-server" target="1.8" />
       <module name="sso-sever" target="1.8" />
       <module name="sso_sever" target="1.8" />
     </bytecodeTargetLevel>
